@@ -1,0 +1,455 @@
+<html>
+
+<head>
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding-right: 30px;
+            font-weight: bold;
+            background-color: black;
+            height: 112px;
+            line-height: 112px;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .logo img {
+            margin-left: 10px;
+            margin-right: 0px;
+            height: 50px;
+        }
+
+        .logo2 img {
+            margin-left: 50px;
+            height: 50px;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header.transparent-nav a {
+            padding-right: 30px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: none;
+            color: orange;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #nav {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 0%;
+                max-width: 250px;
+                height: 100vh;
+                background: #FFF;
+                -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+                padding-top: 80px;
+                padding-bottom: 40px;
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                transform: translateX(100%);
+                -webkit-transition: 0.4s all cubic-bezier(.77, 0, .18, 1);
+                transition: 0.4s all cubic-bezier(.77, 0, .18, 1);
+                z-index: 9;
+            }
+
+            #header.nav-collapse #nav {
+                width: 100%;
+                -webkit-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                transform: translateX(0%);
+            }
+
+            .main-menu {
+                margin: 0;
+            }
+
+            .main-menu li a {
+                color: #374050 !important;
+                display: inline-block;
+                margin-left: 40px;
+            }
+        }
+
+        /* -- Mobile Toggle Btn -- */
+        .navbar-toggle {
+            position: fixed;
+            right: 0;
+            padding: 0;
+            height: 40px;
+            width: 40px;
+            margin-top: 5px;
+            z-index: 99;
+        }
+
+        .navbar-toggle>span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transition: 0.2s background;
+            transition: 0.2s background;
+        }
+
+        .navbar-toggle>span:before,
+        .navbar-toggle>span:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            -webkit-transition: 0.2s -webkit-transform;
+            transition: 0.2s -webkit-transform;
+            transition: 0.2s transform;
+            transition: 0.2s transform, 0.2s -webkit-transform;
+        }
+
+        .navbar-toggle>span,
+        .navbar-toggle>span:before,
+        .navbar-toggle>span:after {
+            height: 2px;
+            width: 25px;
+            background-color: #374050;
+        }
+
+        .navbar-toggle>span:before {
+            top: -10px;
+        }
+
+        .navbar-toggle>span:after {
+            top: 10px;
+        }
+
+        #header.nav-collapse .navbar-toggle>span {
+            background: transparent;
+        }
+
+        #header.nav-collapse .navbar-toggle>span:before {
+            -webkit-transform: translateY(10px) rotate(45deg);
+            -ms-transform: translateY(10px) rotate(45deg);
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        #header.nav-collapse .navbar-toggle>span:after {
+            -webkit-transform: translateY(-10px) rotate(-45deg);
+            -ms-transform: translateY(-10px) rotate(-45deg);
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+
+        /* -- Mobile Nav -- */
+        @media only screen and (max-width: 767px) {
+            #nav {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 0%;
+                max-width: 250px;
+                height: 100vh;
+                background: #FFF;
+                -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+                padding-top: 80px;
+                padding-bottom: 40px;
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                transform: translateX(100%);
+                -webkit-transition: 0.4s all cubic-bezier(.77, 0, .18, 1);
+                transition: 0.4s all cubic-bezier(.77, 0, .18, 1);
+                z-index: 9;
+            }
+
+            #header.nav-collapse #nav {
+                width: 100%;
+                -webkit-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                transform: translateX(0%);
+            }
+
+            .main-menu {
+                margin: 0;
+            }
+
+            .main-menu li a {
+                color: #374050 !important;
+                display: inline-block;
+                margin-left: 40px;
+            }
+        }
+
+        /* -- Mobile Toggle Btn -- */
+        .navbar-toggle {
+            position: fixed;
+            right: 0;
+            padding: 0;
+            height: 40px;
+            width: 40px;
+            margin-top: 5px;
+            z-index: 99;
+        }
+
+        .navbar-toggle>span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transition: 0.2s background;
+            transition: 0.2s background;
+        }
+
+        .navbar-toggle>span:before,
+        .navbar-toggle>span:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            -webkit-transition: 0.2s -webkit-transform;
+            transition: 0.2s -webkit-transform;
+            transition: 0.2s transform;
+            transition: 0.2s transform, 0.2s -webkit-transform;
+        }
+
+        .navbar-toggle>span,
+        .navbar-toggle>span:before,
+        .navbar-toggle>span:after {
+            height: 2px;
+            width: 25px;
+            background-color: #374050;
+        }
+
+        .navbar-toggle>span:before {
+            top: -10px;
+        }
+
+        .navbar-toggle>span:after {
+            top: 10px;
+        }
+
+        #header.nav-collapse .navbar-toggle>span {
+            background: transparent;
+        }
+
+        #header.nav-collapse .navbar-toggle>span:before {
+            -webkit-transform: translateY(10px) rotate(45deg);
+            -ms-transform: translateY(10px) rotate(45deg);
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        #header.nav-collapse .navbar-toggle>span:after {
+            -webkit-transform: translateY(-10px) rotate(-45deg);
+            -ms-transform: translateY(-10px) rotate(-45deg);
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+        .main-banner-section {
+            position: relative;
+            padding: 90px 0px 0px;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            background-color: #f7f7f7
+        }
+
+        .main-banner-section .text {
+            color: black;
+        }
+
+        p,
+        .text {
+            position: relative;
+            line-height: 1.8em;
+            font-family: tahoma;
+        }
+
+        .sec-title {
+            background: #f7f7f7;
+            padding-top: 50px;
+        }
+
+        .sec-title.light .title,
+        .sec-title.light h2 {
+            color: black;
+        }
+
+        .btn-style-one {
+            position: relative;
+            line-height: 30px;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            border: 1px solid #fdb40e;
+            background: #fdb40e;
+            text-transform: capitalize;
+            padding: 15px 50px 15px;
+        }
+
+        .theme-btn {
+            display: inline-block;
+            transform: all 0.3s ease;
+        }
+
+        .btn-style-one:hover {
+            background-color: deepskyblue;
+            text-decoration: none;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .sec-title .title {
+            position: relative;
+            color: #414857;
+            font-size: 17px;
+            margin-bottom: 33px;
+            text-transform: capitalize;
+            padding-left: 133px;
+        }
+
+        .sec-title:before {
+            position: absolute;
+            content: '';
+            left: 17px;
+            top: 12px;
+            height: 2px;
+            width: 110px;
+            background: white;
+        }
+
+        footer {
+
+            background-size: cover;
+            background-attachment: fixed;
+            padding-top: 90px;
+            padding-bottom: 0px;
+            -webkit-background-size: cover;
+        }
+
+        .social-icon a {
+            margin: 0 16px 20px 16px;
+            display: inline-block;
+        }
+
+        .social-icon .fa {
+            font-size: 20px;
+            color: deepskyblue;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            line-height: 2;
+            transition: .3s;
+            border: 10px solid skyblue;
+            text-align: center;
+        }
+
+        .social-icon a:hover .fa {
+            border: 10px solid white;
+        }
+
+        .copyright {
+            margin-top: 10px;
+           
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="header" class="transparent-nav">
+        <div class="container">
+
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <a class="logo" href="index.html">
+                        <a href="" class="logo"><img src="image/logo.png"></a>
+                        
+                    </a>
+                </div>
+                <button class="navbar-toggle">
+                    <span></span>
+                </button>
+            </div>
+            <nav id="nav">
+                <ul class="main-menu nav navbar-nav navbar-left">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Aboutus.html">About Us</a></li>
+                    <li><a href="ourserive.html">Our Services</a></li>
+                    <li><a href="contect.php">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="main-banner-section container">
+        <div class="auto-container">
+            <div class="inner-container">
+                <div class="sec-title light col-md-6">
+                    <div class="title"></div>
+                    
+                        <span style="font-size:60px;">About Us</span>
+                    </h2>
+                    <br><br>
+                    <div class="text">
+                        <p>INFERNO INFOSEC is a start up Institute in the field of Cyber Security and Ethical Hacking training. We have started from Vadodara city and about to expand all over Gujarat and Nation Wide. Inferno InfoSec Institute is motivating and guiding students towards the field of Cyber Security and Ethical Hacking. Knowing the current trends about Cyber Security & Ethical Hacking, there is a huge career scope for the students in this field.
+                            <br>Our training and module is designed in such a manner that it helps any student to get hands on practical knowledge in the field of IT security. One can learn, grow and Evolve himself/ herself in the IT security field with Inferno InfoSec. Due to our focus on practical based knowledge it helps out the students to face the corporate IT security challenges and get them solved with their highly developed skills.</p>
+                    </div>
+                    <br>
+                    <div class="btn-box">
+                       
+
+                    </div>
+                </div>
+                <div class="sec-title light col-md-6">
+                    <img src="image/AboutUs.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/infernoinfosec/"><i class="fa fa-facebook"></i></a>
+                                            <a href="https://www.instagram.com/inferno_infosec/"><i class="fa fa-instagram"></i></a>
+                                            <a href="https://twitter.com/InfernoInfosec"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://www.linkedin.com/in/inferno-infosec-502213191/"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy;<b> inferno infosec 2019. All Rights Reserved</b>
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $('.navbar-toggle').on('click', function() {
+            $('#header').toggleClass('nav-collapse')
+        });
+
+    </script>
+</body>
+
+</html>
